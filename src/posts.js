@@ -5,6 +5,7 @@ import {
   DisabledInput,
   Edit,
   EditButton,
+  Filter,
   List,
   LongTextInput,
   ReferenceField,
@@ -17,7 +18,7 @@ import {
 } from 'admin-on-rest';
 
 export const PostList = (props) => (
-  <List {...props}>
+  <List {...props} filters={<PostFilter />}>
     <Datagrid>
       <TextField source="id"/>
       <ReferenceField label="User" source="userId" reference="users">
@@ -57,4 +58,15 @@ export const PostCreate = (props) => (
       <LongTextInput source="body"/>
     </SimpleForm>
   </Create>
+);
+
+
+
+const PostFilter = (props) => (
+  <Filter {...props}>
+    <TextInput label="Search" source="q" alwaysOn />
+    <ReferenceInput label="User" source="userId" reference="users">
+      <SelectInput optionText="name" />
+    </ReferenceInput>
+  </Filter>
 );
