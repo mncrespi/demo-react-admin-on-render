@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import './App.css';
+import './index.css';
 import { jsonServerRestClient, Admin, Resource, Delete } from 'admin-on-rest';
-import { PostList, PostCreate, PostEdit } from './posts';
-import { UserList } from './users';
+import { PostList, PostCreate, PostEdit } from '../resources/posts';
+import { UserList } from '../resources/users';
 import PostIcon from 'material-ui/svg-icons/action/book';
 import UserIcon from 'material-ui/svg-icons/social/group';
-import Dashboard from './dashboard'
-import authClient from './authClient'
+import Dashboard from '../resources/dashboard'
+import authClient from '../resources/auth'
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <Admin authClient={authClient} dashboard={Dashboard} restClient={jsonServerRestClient('http://jsonplaceholder.typicode.com')}>
@@ -18,5 +18,3 @@ class App extends Component {
     )
   }
 }
-
-export default App;
