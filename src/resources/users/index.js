@@ -1,20 +1,12 @@
-import React, {Component} from 'react';
-import {Datagrid, EmailField, List, TextField} from 'admin-on-rest';
+import UserList from './list'
+import UserCreate from './create'
+import UserEdit from './edit'
+import UserIcon from 'material-ui/svg-icons/social/group';
 
 
-export class UserList extends Component {
-
-  render() {
-    return (
-      <List title="All users" {...this.props}>
-        <Datagrid>
-          <TextField source="id"/>
-          <TextField source="name"/>
-          <TextField source="username"/>
-          <EmailField source="email"/>
-        </Datagrid>
-      </List>
-    )
-  }
+export {
+  UserIcon,
+  UserList,
+  UserCreate,
+  UserEdit,
 }
-
