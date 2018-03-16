@@ -25,7 +25,7 @@ export default class PostList extends Component {
 
   render() {
     return (
-      <List {...this.props} filters={<PostFilter/>}>
+      <List title="Posts List" {...this.props} filters={<PostFilter/>}>
         <Datagrid>
           <TextField source="id"/>
           <ReferenceField label="User" source="userId" reference="users">

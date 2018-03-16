@@ -7,16 +7,11 @@ import {
 } from 'admin-on-rest';
 
 
-const Title = (props) => (
-  <span>User {props.record ? `"${props.record.name}"` : ''}</span>
-)
-
-
 export default class PostEdit extends Component {
 
   render() {
     return (
-      <Create title={<Title/>} {...this.props}>
+      <Create {...this.props}>
         <SimpleForm>
           <DisabledInput source="id"/>
           <TextInput label="Name" source="name"/>

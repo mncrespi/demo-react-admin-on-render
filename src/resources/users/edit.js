@@ -7,10 +7,9 @@ import {
 } from 'admin-on-rest';
 
 
-const Title = (props) => (
-  <span>User {props.record ? `"${props.record.name}"` : ''}</span>
-)
-
+const Title = (props) => {
+  return <span>{props.record ? `User "${props.record.name}"` : ''}</span>
+}
 
 export default class PostEdit extends Component {
 
